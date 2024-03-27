@@ -3,27 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename= 'css/style.css') }}"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <title>FlaskBlog</title>
+    <title>ML Diamond</title>
   </head>
   <body>
-    <div style="margin: 10%">
-      <h1 style="color: yellow">Welcome to ML APP</h1>
-      <h1 id="titulo">Welcome to ML APP 2</h1>
-      <a class="titulo" href="/ml/hello">aaaa</a>
-     
-      <p>AAAA</p>
-      <button class="btn btn-danger" onclick="clique()">CLICA EM MIM!</button>
-  
-      <img src="" />
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <img
+            class="img-fluid"
+            src="https://www.gia.edu/images/polished-diamond.png"
+          />
+        </div>
+        <div class="col-6">
+          <form class="row g-3">
+            <div class="col-md-3">
+              <label for="cut" class="form-label">Cut</label>
+              <select id="cut" class="form-select">
+                <option selected disabled>Choose...</option>
+                <option value="0">Fair</option>
+                <option value="1">Good</option>
+                <option value="2">Very Good</option>
+                <option value="3">Premium</option>
+                <option value="4">Ideal</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="color" class="form-label">Color</label>
+              <select id="color" class="form-select">
+                <option selected disabled>Choose...</option>
+                <option value="6">D - 6</option>
+                <option value="5">E - 5</option>
+                <option value="4">F - 4</option>
+                <option value="3">G - 3</option>
+                <option value="2">H - 2</option>
+                <option value="1">I - 1</option>
+                <option value="0">J - 0</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="clarity" class="form-label">Clarity</label>
+              <select id="clarity" class="form-select">
+                <option selected disabled>Choose...</option>
+                <option value="0">I1</option>
+                <option value="1">SI2</option>
+                <option value="2">SI1</option>
+                <option value="3">VS2</option>
+                <option value="4">VS1</option>
+                <option value="5">VVS2</option>
+                <option value="6">VVS1</option>
+                <option value="7">IF</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="carat" class="form-label">Carat (0.0 - 1.0)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="carat"
+                min="0.0"
+                max="1.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-md-3">
+              <label for="depth" class="form-label">Depth</label>
+              <input
+                type="number"
+                class="form-control"
+                id="depth"
+                min="0.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-md-3">
+              <label for="table" class="form-label">Table</label>
+              <input
+                type="number"
+                class="form-control"
+                id="table"
+                min="0.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-md-2">
+              <label for="x" class="form-label">X</label>
+              <input
+                type="number"
+                class="form-control"
+                id="x"
+                min="0.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-md-2">
+              <label for="y" class="form-label">Y</label>
+              <input
+                type="number"
+                class="form-control"
+                id="y"
+                min="0.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-md-2">
+              <label for="z" class="form-label">Z</label>
+              <input
+                type="number"
+                class="form-control"
+                id="z"
+                min="0.0"
+                step="0.1"
+              />
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Verificar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
