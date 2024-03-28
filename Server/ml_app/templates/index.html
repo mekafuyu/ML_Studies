@@ -13,6 +13,9 @@
   <body>
     <div class="container">
       <div class="row">
+        {% if error %}
+          <div class="col-12">ERROR</div>
+        {% endif %}
         <div class="col-6">
           <img
             class="img-fluid"
@@ -20,10 +23,10 @@
           />
         </div>
         <div class="col-6">
-          <form class="row g-3">
+          <form class="row g-3" action="/" method="post">
             <div class="col-md-3">
               <label for="cut" class="form-label">Cut</label>
-              <select id="cut" class="form-select">
+              <select id="cut" name="cut" class="form-select">
                 <option selected disabled>Choose...</option>
                 <option value="0">Fair</option>
                 <option value="1">Good</option>
@@ -34,7 +37,7 @@
             </div>
             <div class="col-md-3">
               <label for="color" class="form-label">Color</label>
-              <select id="color" class="form-select">
+              <select id="color" name="color" class="form-select">
                 <option selected disabled>Choose...</option>
                 <option value="6">D - 6</option>
                 <option value="5">E - 5</option>
@@ -47,7 +50,7 @@
             </div>
             <div class="col-md-3">
               <label for="clarity" class="form-label">Clarity</label>
-              <select id="clarity" class="form-select">
+              <select id="clarity" name="clarity" class="form-select">
                 <option selected disabled>Choose...</option>
                 <option value="0">I1</option>
                 <option value="1">SI2</option>
@@ -65,9 +68,9 @@
                 type="number"
                 class="form-control"
                 id="carat"
+                name="carat"
                 min="0.0"
-                max="1.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-md-3">
@@ -76,8 +79,9 @@
                 type="number"
                 class="form-control"
                 id="depth"
+                name="depth"
                 min="0.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-md-3">
@@ -86,8 +90,9 @@
                 type="number"
                 class="form-control"
                 id="table"
+                name="table"
                 min="0.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-md-2">
@@ -96,8 +101,9 @@
                 type="number"
                 class="form-control"
                 id="x"
+                name="x"
                 min="0.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-md-2">
@@ -106,8 +112,9 @@
                 type="number"
                 class="form-control"
                 id="y"
+                name="y"
                 min="0.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-md-2">
@@ -116,14 +123,18 @@
                 type="number"
                 class="form-control"
                 id="z"
+                name="z"
                 min="0.0"
-                step="0.1"
+                step="0.01"
               />
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary">Verificar</button>
             </div>
           </form>
+          {% if result > 0 %}
+          <h1>{{result}}</h1>
+          {% endif %}
         </div>
       </div>
     </div>
